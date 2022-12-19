@@ -1,0 +1,27 @@
+import moments from 'moment-timezone';
+export type Moment = moment.Moment;
+declare const _default: {
+    _moment: typeof moments;
+    momentz(time?: any): moments.Moment;
+    toString(time?: any): string;
+    yunAgo(timestamp: number): string;
+    ago(timestamp: number): string;
+    calculateShipmentDate(remaining?: number, NOW?: Moment | Date): moment.Moment;
+    convertStringToDate(date: string, format?: string): Date;
+    dateStamp(timestamp: number): number;
+    format(date: Date, format?: string): string;
+    getGreetingTime(date?: number): "Evening" | "Afternoon" | "Morning";
+    getFirstDayInNextMonth(date?: Date): moments.Moment;
+    getLastDayInCurrentMonth(date?: Date): moments.Moment;
+    getCurrentMonth(date?: number): string;
+    getCurrentDate(date?: Date): string;
+    getCurrentYMD(date?: Date): string;
+    getRange(dates?: Date[], as_string?: boolean, date_format?: string, month_format?: string, year_format?: string): string | any[];
+    isOpen(openingHour: Date, closingHour: Date): boolean;
+    isOlderThan(timestamp: Date, n: number, unit?: moment.unitOfTime.DurationConstructor): boolean;
+    isLessThan(timestamp: Date, n: number, unit?: moment.unitOfTime.DurationConstructor): boolean;
+    queryLessThanEqual(date: Date | null | undefined | false): false | Date;
+    validateShipmentDate(date: string): boolean;
+    timeLeft(date: Date, from?: Date): string;
+};
+export default _default;
