@@ -23,5 +23,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = void 0;
+exports.Absen = exports.Object = exports.Personel = exports.User = void 0;
 exports.User = __importStar(require("./user"));
+exports.Personel = __importStar(require("./personel"));
+exports.Object = __importStar(require("./object"));
+exports.Absen = __importStar(require("./absen"));

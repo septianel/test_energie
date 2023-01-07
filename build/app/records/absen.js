@@ -15,12 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserRecord = void 0;
 const record_1 = __importDefault(require("../models/record"));
 const typeorm_1 = require("typeorm");
-const enum_1 = require("utils/constants/enum");
 class UserRecord extends record_1.default {
 }
 UserRecord.table = {
     schema: 'app',
-    name: 'user',
+    name: 'absen',
     comment: '@omit create,update,delete',
 };
 __decorate([
@@ -43,42 +42,55 @@ __decorate([
         unique: true
     }),
     __metadata("design:type", String)
-], UserRecord.prototype, "USRNM", void 0);
+], UserRecord.prototype, "BUSCD", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         nullable: false,
         unique: true
     }),
     __metadata("design:type", String)
-], UserRecord.prototype, "STREE", void 0);
+], UserRecord.prototype, "PERNR", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         nullable: false,
         unique: true
     }),
     __metadata("design:type", String)
-], UserRecord.prototype, "EMAIL", void 0);
-__decorate([
-    (0, typeorm_1.Column)({
-        nullable: true,
-    }),
-    __metadata("design:type", String)
-], UserRecord.prototype, "PASWD", void 0);
+], UserRecord.prototype, "CNAME", void 0);
 __decorate([
     (0, typeorm_1.Column)({
         nullable: false,
-        default: enum_1.USER_STATUS.ACTIVED,
-        type: 'enum',
-        enum: Object.values(enum_1.USER_STATUS)
-    }),
-    __metadata("design:type", String)
-], UserRecord.prototype, "STATS", void 0);
-__decorate([
-    (0, typeorm_1.Column)({
-        nullable: true,
         unique: true
     }),
     __metadata("design:type", String)
-], UserRecord.prototype, "PHONE", void 0);
+], UserRecord.prototype, "GENDR", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        nullable: false,
+        unique: true
+    }),
+    __metadata("design:type", String)
+], UserRecord.prototype, "CEKIN", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        nullable: false,
+        unique: true
+    }),
+    __metadata("design:type", String)
+], UserRecord.prototype, "CEOUT", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        nullable: false,
+        unique: true
+    }),
+    __metadata("design:type", String)
+], UserRecord.prototype, "PRSNT", void 0);
+__decorate([
+    (0, typeorm_1.Column)({
+        nullable: false,
+        unique: true
+    }),
+    __metadata("design:type", String)
+], UserRecord.prototype, "DESCP", void 0);
 exports.UserRecord = UserRecord;
 exports.default = UserRecord;

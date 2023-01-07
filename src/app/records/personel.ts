@@ -5,24 +5,26 @@ import {
 } from 'typeorm'
 
 import InterfaceModel from '../models/interface'
-import { USER_STATUS } from 'utils/constants/enum'
+// import { USER_STATUS } from 'utils/constants/enum'
 
 export interface UserInterface extends InterfaceModel {
     BEGDA: string
     ENDDA: string
-    USRNM: string
-    STREE: string
-    EMAIL: string
-    PASWD: string
-    STATS: USER_STATUS
-    PHONE: string
+    BUSCD: string
+    PERNR: string
+    CNAME: string
+    NICNM: string
+    BRNCT: string
+    BRNDT: string
+    GENDR: string
+    RELIG: string
 }
 
 export class UserRecord extends RecordModel implements Required<UserInterface> {
 
     public static table = {
         schema: 'app',
-        name: 'user',
+        name: 'personel',
         comment: '@omit create,update,delete',
     }
 
@@ -42,39 +44,50 @@ export class UserRecord extends RecordModel implements Required<UserInterface> {
         nullable: false,
         unique: true
     })
-    USRNM: string
+    BUSCD: string
 
     @Column({
         nullable: false,
         unique: true
     })
-    STREE: string
+    PERNR: string
+
 
     @Column({
         nullable: false,
         unique: true
     })
-    EMAIL: string
-
-    @Column({
-        nullable: true,
-    })
-    PASWD: string
+    CNAME: string
 
     @Column({
         nullable: false,
-        default: USER_STATUS.ACTIVED,
-        type: 'enum',
-        enum: Object.values(USER_STATUS)
-    })
-    STATS: USER_STATUS
-
-    @Column({
-        nullable: true,
         unique: true
     })
-    PHONE: string
-    
+    NICNM: string
+
+    @Column({
+        nullable: false,
+        unique: true
+    })
+    BRNCT: string
+
+    @Column({
+        nullable: false,
+        unique: true
+    })
+    BRNDT: string
+
+    @Column({
+        nullable: false,
+        unique: true
+    })
+    GENDR: string
+
+    @Column({
+        nullable: false,
+        unique: true
+    })
+    RELIG: string
 
     // ====================== TYPORM RELATION DEFINITION =======================
 }
